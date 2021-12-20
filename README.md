@@ -1,16 +1,10 @@
 # se494_third_works
 
-A new Flutter project.
+A work on 16/12/2021
 
-## Getting Started
+## Today lesson
 
-This project is a starting point for a Flutter application.
+- layout reference by [this](https://medium.com/flutteropen/flutter-widgets-04-row-column-7a9d8062b472)
+- picture by [this](https://pixabay.com/th/)
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+😁
