@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:se494_third_works/components/mybox.dart';
+import 'dart:convert';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -13,21 +14,20 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Computer Knowledge"),
+        title: const Text("The World of Witcher"),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(20),
-        child: ListView(
-          children: [
-            const SizedBox(height: 20,),
-            MyBox(imageUrl:"https://cdn.pixabay.com/photo/2021/12/11/12/15/bird-6862640_960_720.jpg",),
-            const SizedBox(height: 20,),
-            MyBox(imageUrl: "https://cdn.pixabay.com/photo/2020/01/02/17/25/champagne-4736380_960_720.jpg",),
-            const SizedBox(height: 20,),
-            MyBox(imageUrl: "https://cdn.pixabay.com/photo/2019/11/27/21/06/jerusalem-4657867_960_720.jpg",),
-            const SizedBox(height: 20,),
-          ],
-        ),
+          padding: const EdgeInsets.all(20),
+          child: FutureBuilder(
+            builder:(context,snapshot){
+              var data = json.decode(snapshot.data.toString());
+              return ListView.builder(itemBuilder: (BuildContext context, int index){
+                return MyBox(imageUrl: data[index]['image'],title: data[index]['title'],subtitle: data[index]['subtitle'],);
+              },
+                itemCount: data.length,);
+            },
+            future: DefaultAssetBundle.of(context).loadString('assets/data.json'),
+          )
       )
     );
   }

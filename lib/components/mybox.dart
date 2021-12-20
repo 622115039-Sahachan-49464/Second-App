@@ -4,11 +4,14 @@ import 'package:se494_third_works/widgets/mytext.dart';
 
 class MyBox extends StatelessWidget {
   String imageUrl;
+  String title;
+  String subtitle;
 
-  MyBox({Key? key, required this.imageUrl}) : super(key: key);
+  MyBox({Key? key, required this.imageUrl, required this.title, required this.subtitle}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: const EdgeInsets.only(top: 20),
       padding: const EdgeInsets.all(20),
       height: 150,
       decoration: BoxDecoration(
@@ -26,8 +29,8 @@ class MyBox extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          MyText(sometxt: "What is a computer", size: 25),
-          MyText(sometxt: "Computer is a things to calculate and for any other works", size: 15),
+          MyText(sometxt: title, size: 25),
+          MyText(sometxt: subtitle, size: 15),
           const SizedBox(height: 15,),
           TextButton(
               onPressed: () {
