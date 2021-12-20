@@ -30,18 +30,19 @@ class MyBox extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           MyText(sometxt: title, size: 25),
-          MyText(sometxt: subtitle, size: 15),
-          const SizedBox(height: 15,),
+          MyText(sometxt: subtitle, size: 12),
+          const SizedBox(height: 10,),
           TextButton(
               onPressed: () {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => DetailsPage()
+                        builder: (context) => const DetailsPage()
                     )
                 );
               },
-              child: MyText(sometxt: "read more",size: 12,))
+              child: MyText(sometxt: "read more",size: 12,),
+          ),
         ],
       ),
     );
