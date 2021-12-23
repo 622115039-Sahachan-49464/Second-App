@@ -22,7 +22,12 @@ class _HomePageState extends State<HomePage> {
             builder:(context,snapshot){
               var data = json.decode(snapshot.data.toString());
               return ListView.builder(itemBuilder: (BuildContext context, int index){
-                return MyBox(imageUrl: data[index]['image'],title: data[index]['title'],subtitle: data[index]['subtitle'],);
+                return MyBox(
+                  imageUrl: data[index]['image'],
+                  title: data[index]['title'],
+                  subtitle: data[index]['subtitle'],
+                  detail: data[index]['detail'],
+                );
               },
                 itemCount: data.length,);
             },

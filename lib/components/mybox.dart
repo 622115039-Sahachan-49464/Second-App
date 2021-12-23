@@ -6,8 +6,9 @@ class MyBox extends StatelessWidget {
   String imageUrl;
   String title;
   String subtitle;
+  String detail;
 
-  MyBox({Key? key, required this.imageUrl, required this.title, required this.subtitle}) : super(key: key);
+  MyBox({Key? key, required this.imageUrl, required this.title, required this.subtitle,required this.detail}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -30,18 +31,19 @@ class MyBox extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           MyText(sometxt: title, size: 25),
-          MyText(sometxt: subtitle, size: 15),
-          const SizedBox(height: 15,),
+          MyText(sometxt: subtitle, size: 12),
+          const SizedBox(height: 10,),
           TextButton(
               onPressed: () {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => DetailsPage()
+                        builder: (context) => DetailsPage(title,subtitle,imageUrl,detail)
                     )
                 );
               },
-              child: MyText(sometxt: "read more",size: 12,))
+              child: MyText(sometxt: "read more",size: 12,),
+          ),
         ],
       ),
     );
